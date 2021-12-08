@@ -1,17 +1,10 @@
-
 clear;
 clc;
 img = imread('lena_color.png');
-
-
 timg = img(:,:,1); % RED CHANNEL
-
 row = size(img,1);%number of rows
 col = size(img,2);%number of cols
-
-
 tic
-
 %DNA_encode_rule
 
 d   =  [];
@@ -139,10 +132,6 @@ while i <row*col*4
  end
  add=char(add);
 end
-
-
-
-
 
 %XOR
 while i <row*col*2  
@@ -287,11 +276,6 @@ while i <row*col
  add=char(add);
 end
 
-
-
-
-
-
 i=1;
 %complement
 
@@ -309,10 +293,6 @@ for i = 1:(row*col)
         end        
     
 end
-
-
-
-
 
 r = 3.62; %system parameter
 x(1) = 0.7; % initial value
@@ -408,8 +388,6 @@ imshow(red_enc), title('red encrypted');
  timg = img(:,:,2); % GREEN CHANNEL
  
 tic
-
-
 
 %DNA_encode_rule
 
@@ -611,7 +589,6 @@ while i <row*col*2
  add=char(add);
 end
 
-
 %subtract
 while i <row*col  
     
@@ -682,8 +659,6 @@ while i <row*col
  end
  add=char(add);
 end
-
-
 
 i=1;
 %complement
@@ -1072,8 +1047,6 @@ while i <row*col
  add=char(add);
 end
 
-
-
 i=1;
 %complement
 
@@ -1207,18 +1180,12 @@ imhist(final_encrypted), title('Cipher image histogram');
 figure(9)
 imhist(back_to_original_img), title('Retrieved image histogram');
 
-
-
-
 %Entropy Test
 
 E1 = entropy(red_enc)
 E2 = entropy(green_enc)
 E3 = entropy(blue_enc)
 E4 = entropy(final_encrypted)
-
-
-
 
 %PSNR - Value should be high
 
@@ -1234,8 +1201,6 @@ if(MSE > 0)
 else
     PSNR = 99
 end
-
-
 
 figure(10)
 %Pixel Correlation
