@@ -12,8 +12,6 @@ col = size(img,2);%number of cols
 
 tic
 
-
-
 %DNA_encode_rule
 
 d   =  [];
@@ -721,9 +719,6 @@ for i=1:(row*col)/2
     end
     decoded_img = [decoded_img kk];
 end
-
-
-
 
 r = 3.62;
 x(1) = 0.7;
